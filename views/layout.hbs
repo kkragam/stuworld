@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>{{title}}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="/css/jqmath-0.4.3.css" />
+    <link rel="stylesheet" href="/css/bootstrap.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/bootstrap-theme.css" crossorigin="anonymous"> 
+    <link href="/css/bootstrap-responsive.css" rel="stylesheet">
+    <script src="/js/jquery-2.2.0.min.js" crossorigin="anonymous"></script>
+    
+    <script src="/js/jscurry-0.4.0.js"></script>
+    <script src="/js/jqmath-0.4.3.js"></script>
+    
+    <script src="/js/bootstrap.min.js" crossorigin="anonymous"></script>
+    <link rel='stylesheet' href='/css/style.css' />
+    <link rel='stylesheet' href='/css/sprites/apps.css' /> 
+    <script src="/js/whites.js" crossorigin="anonymous"></script>
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-37646691-9', 'auto');
+        ga('send', 'pageview');
+
+        </script>
+    
+     
+      
+    
+
+</head>
+
+<body>
+    <div id="wrapper">
+        <nav class="navbar navbar-default navbar-static-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">{{sitename}}</a>
+                </div>
+                <!--navbar-header>-->
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        {{#each menu}}
+                            {{#if this.subItems}} 
+                                 <li class="dropdown {{#if this.active}}active{{/if}}">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">{{this.title}}<span class="caret"></span></a>
+                                         <ul class="dropdown-menu">
+                                             {{#each this.subItems}}
+                                                 <li><a href="/{{../this.href}}/{{this.href}}">{{this.title}}</a></li>
+                                            {{/each}}
+                                        </ul>
+                                 </li>
+                            {{else}} 
+                                <li class="{{#if this.active}}active{{/if}}"><a href="/{{this.href}}">{{this.title}}</a></li>
+                            {{/if}}
+                        {{/each}}
+                    </ul>
+                </div>
+                <!--/.nav-collapse -->
+                <!-- </div>-->
+            </div>
+            <!--/.container-fluid -->
+        </nav>
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span2">
+
+                </div>
+                <div class="span8 pagebody">
+                    {{{body}}}
+                </div>
+                <div class="span2">
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <footer class="container-fluid text-left" id="footer">
+            
+            <div class="row-fluid" >
+                 
+                 <div class="span4">{{footer.copyright}}
+                    <script>
+                        document.write((new Date()).getFullYear())
+                    </script>  
+                 </div>
+                
+                <div class="span4">
+                      <div class="fb-like" data-href="https://www.facebook.com/IStudentWorld-1726704007601531/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>    
+
+                    <!--
+                    <div id="fb-root"></div>
+                    <div class="fb-like" 
+                         data-href="{{footer.fburl}}" 
+                         data-layout="standard" 
+                         data-action="like"
+                         data-show-faces="false" 
+                         data-colorscheme="dark"
+                         data-share="true">
+                     </div>
+                     <script>
+                        (function(d, s, id) {
+                        var js, fjs = d.getElementsByTagName(s)[0];
+                        if (d.getElementById(id)) return;
+                        js = d.createElement(s); js.id = id;
+                        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=347742345367486";
+                        fjs.parentNode.insertBefore(js, fjs);
+                        }(document, 'script', 'facebook-jssdk'));
+                    </script>-->
+                </div>
+                <div class="span4">
+                     <a href="https://twitter.com/istudentworld" 
+                    class="twitter-follow-button" 
+                    data-show-count="true" 
+                    data-size="default"
+                    data-show-screen-name="false">Follow @whitesof</a>
+                    <script>
+                        !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+                    </script>
+                </div>
+                
+            <!--Row-->
+            </div>  
+        </footer>
+    </div>
+</body>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.7";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+</html>

@@ -1,0 +1,64 @@
+var quiz=
+  [
+       {
+           question:'Question 1 Text here',
+           answerType:R,
+           answers:[
+               {
+                   text:'Answer Choice 1',
+                   img: ['imgurl','imgurl']
+               } 
+               {
+                   text:'Answer Choice 2',
+                   img: ['imgurl','imgurl']
+               } 
+           ],
+           img:['url1','url2'];
+           correct: [0]
+           
+       },
+       {
+           question:'Question 2 Text here',
+           answerType:R,
+           answers:[
+               {
+                   text:'2 Answer Choice 1',
+                   img: ['imgurl','imgurl']
+               },
+               {
+                   text:'2 Answer Choice 2',
+                   img: ['imgurl','imgurl']
+               }, 
+               {
+                   text:'2 Answer Choice 3',
+                   img: ['imgurl','imgurl']
+               } 
+           ],
+           img:['url1','url2'];
+           correct: [0]
+           
+       },
+       {
+           question:'Question 3 Text here',
+           answerType:C,
+           answers:[
+               {
+                   text:'3 Answer Choice 1',
+                   img: ['imgurl','imgurl']
+               }, 
+               {
+                   text:'3 Answer Choice 2',
+                   img: ['imgurl','imgurl']
+               },
+               {
+                   text:'3 Answer Choice 3',
+                   img: ['imgurl','imgurl']
+               } 
+           ],
+           img:['url1','url2'];
+           correct: [0,2]
+           
+       }
+      
+  ];  
+ 

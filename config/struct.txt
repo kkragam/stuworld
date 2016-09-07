@@ -1,0 +1,26 @@
+#TEXT STRCUTURE
+------------------
+TOPICS/PHYTOPIC_1/SAMP_1
+TOPICS/PHYTOPIC_1/SAMP_2
+
+
+
+# IMAGE DIRECTORY STRUCTURE : (only PNG and JPG)
+-----------------------------
+Folder Structure for images: STU_IMG/PHY/TOPICS/PHYTOPIC_7/SAMP_2/Q1.png
+Folder Structure for images: STU_IMG/PHY/TOPICS/PHYTOPIC_7/SAMP_2/Q2.png
+Folder Structure for images: STU_IMG/PHY/TOPICS/PHYTOPIC_7/SAMP_2/Q1A1.png
+Folder Structure for images: STU_IMG/PHY/TOPICS/PHYTOPIC_7/SAMP_2/Q2A1.png
+
+Folder Structure for images: STU_IMG/PHY/TOPICS/PHYTOPIC_1/SAMP_2/Q1.png
+Folder Structure for images: STU_IMG/PHY/TOPICS/PHYTOPIC_1/SAMP_2/Q2.png
+Folder Structure for images: STU_IMG/PHY/TOPICS/PHYTOPIC_1/SAMP_2/Q1A1.png
+Folder Structure for images: STU_IMG/PHY/TOPICS/PHYTOPIC_1/SAMP_2/Q2A1.png
+
+
+
+Answer TYPES:
+
+1) R -> Boolean i.e yes or no or has to select one option of multiple.
+2) C -> Check boxes ,User can select multiple answers
+ 

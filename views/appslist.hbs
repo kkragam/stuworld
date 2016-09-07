@@ -1,0 +1,17 @@
+<div class="container-fluid">
+    {{#each data.listOfApps}}
+    <div class="row-fluid"> 
+           <div class="container-fluid text-center">
+              <h2>{{appname}}</h2> 
+              <p class="text-left"><img  src="{{appicon}}" alt="{{alt}}" height="{{iconwidth}}" width="{{iconwidth}}" class="img-responsive img-rounded floatImage">{{appdesc}}</p>
+              <p> 
+                  {{#each markets}} 
+                  <a class="btn btn-default" href="{{this.url}}">
+                     <img src="{{this.icon}}" width="{{this.width}}" height="{{this.height}}" />
+                   </a>
+                   {{/each}}
+              </p>
+           </div>
+    </div>
+    {{/each}}
+</div>

@@ -1,0 +1,94 @@
+<div class="container-fluid" id="QuesAnsEdit">
+    <ul>
+    {{#each sampleQuestion}}  
+        <li id="{{questionNo}}-Question" class="questionLevel"> 
+            <div class="input-group"> 
+                  <span class="input-group-addon" id="sizing-addon1">{{questionNo}}</span>
+                  <textarea class="form-control" onkeyup="textAreaAdjust(this)" quesno="{{questionNo}}" name="question"  placeholder="{{LABEL 'questionHere'}}" rows="2">{{question}}</textarea>
+                  <span class="input-group-addon addanswer" quesno={{questionNo}}><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></span>
+                  <span class="input-group-addon previewquestion" quesno={{questionNo}}><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></span> 
+            </div> 
+            <div class='questionaddons'> 
+                 <div >
+                    <strong>{{LABEL 'answerTypeLbl'}} :</strong> <input type="radio" value="C" name="questionType{{questionNo}}" {{ISCHECKED answerType 'C'}}>Checkbox</input> 
+                    <input type="radio" value="R" name="questionType{{questionNo}}" {{ISCHECKED answerType 'R'}}>Radio</input>
+                 </div>
+                 
+                <div class="input-group">
+                    <span class="input-group-addon" id="sizing-addon1">{{LABEL 'IMGPATH'}} :</span>
+                    <input class="form-control" type="text" value="<img src='{{imgpath}}' /&gt"/>
+                   <span class="input-group-addon previewquestion" quesno={{questionNo}}><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></span>
+                </div> 
+             </div>
+             <!-- LOOP ANSWER CHOICES HERE --> 
+            <ul id="{{questionNo}}-Answers">
+              {{#each answers}} 
+                <li seq={{seq}} >  
+                  <div class="input-group">
+                      <span class="input-group-addon" >
+                          <input name="anschoice-{{../questionNo}}"  {{ANSCHECK seq ../correct}}  onclick="updateAnswers(this);" value={{seq}} seq={{seq}} type="{{CHOICETYPE ../answerType}}"  />
+                       </span>
+                       <textarea class="form-control" onkeyup="textAreaAdjust(this)" quesno="{{../questionNo}}" seq={{seq}} name="answer"  rows="2" placeholder="{{LABEL 'answerHere'}}">{{this.text}}</textarea> 
+                       <span class="input-group-addon" id="deleteanswer" quesno="{{../questionNo}}" seq={{seq}}><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></span>
+                   </div> 
+                   
+                </li> 
+             {{/each}}
+            </ul>
+            <div id="correctAnswer"> <strong>{{LABEL 'correctAnswerLbl'}} </strong> <label>{{correct}} </label> </div>
+            
+            <!--PREVIEW  QUESTIONS HERE -->
+            
+            <div id="preview-{{questionNo}}" class="quespreview" style="display:none;"> 
+                <ul id="answerspreview">
+                    <div id="qspreview" class="text-left"><strong>{{question}}</strong></div>
+                    {{#each answers}} 
+                           <li id="anspreview-{{seq}}" class="anspreview">
+                               <div>
+                                    <input type="{{CHOICETYPE ../answerType}}"  />
+                               </div>
+                                <div id="ansp">
+                                    {{this.text}}
+                                </div>
+                            </li>
+                    {{/each}}
+             </ul>    
+             </div>            
+        </li>
+     
+    {{/each}}
+    </ul>
+    
+</div>
+
+
+<li id="d_answer_r" style="display:none">
+    <div class="input-group">
+            <span class="input-group-addon" >
+                <input name="anschoice" type="radio" onclick="updateAnswers(this);"/>
+             </span>
+            <textarea class="form-control" onkeyup="textAreaAdjust(this)" id="0" rows="2" name="answer"  placeholder="{{LABEL 'answerHere'}}"></textarea> 
+            <span class="input-group-addon" id="deleteanswer"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></span>
+    </div>
+</li>
+
+<li id="d_answer_c" style="display:none">
+    <div class="input-group">
+            <span class="input-group-addon" >
+                <input name="anschoice" type="checkbox" onclick="updateAnswers(this);"/>
+            </span>
+            <textarea class="form-control" onkeyup="textAreaAdjust(this)" id="0" rows="2" name="answer"  placeholder="{{LABEL 'answerHere'}}"></textarea> 
+            <span class="input-group-addon" id="deleteanswer"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></span>
+    </div>
+</li>
+
+
+<li  id="anspreview" name="p_answer_r" style="display:none" class="anspreview">
+    <div><input type="radio"  /></div> <div id="ansp">  </div>
+</li>
+
+<li  id="anspreview" name="p_answer_c" style="display:none" class="anspreview">
+    <div><input type="checkbox"  /></div> <div id="ansp"> </div>
+</li>
+
+ <script src="/js/wevents.js" crossorigin="anonymous"></script>
