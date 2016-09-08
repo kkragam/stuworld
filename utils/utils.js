@@ -47,6 +47,7 @@ var gmail_server = email.server.connect({
 exports.sendEmailHTML = function (data, callback) {
     
     console.log("Environment Variables:"+process.env.WHITESOF_EMAIL_USER);
+    
     //Prepare message template here.
     var message = {};
     if (data) {
